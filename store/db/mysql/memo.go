@@ -205,6 +205,10 @@ func (d *DB) ListMemos(ctx context.Context, find *store.FindMemo) ([]*store.Memo
 		)`)
 	}
 
+	if find.OnlyFutureHidden {
+		where = append(where, `CAST(REPLACE(REPLACE(JSON_UNQUOTE(JSON_EXTRACT(memo.payload, '$.hideUntil')), 'T', ' '), 'Z', '') AS DATETIME(6)) > UTC_TIMESTAMP(6)`)
+	}
+
 	order := "DESC"
 	if find.OrderByTimeAsc {
 		order = "ASC"

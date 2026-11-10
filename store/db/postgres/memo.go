@@ -184,6 +184,10 @@ func (d *DB) ListMemos(ctx context.Context, find *store.FindMemo) ([]*store.Memo
 		)`)
 	}
 
+	if find.OnlyFutureHidden {
+		where = append(where, `(memo.payload->>'hideUntil')::timestamptz > CURRENT_TIMESTAMP`)
+	}
+
 	order := "DESC"
 	if find.OrderByTimeAsc {
 		order = "ASC"

@@ -85,6 +85,7 @@ type FindMemo struct {
 	ExcludeContent       bool
 	ExcludeComments      bool
 	ExcludeFutureHidden  bool
+	OnlyFutureHidden     bool
 	Filters              []string
 
 	// Pagination

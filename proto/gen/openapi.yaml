@@ -715,6 +715,13 @@ paths:
                   description: Optional. If true, show deleted memos in the response.
                   schema:
                     type: boolean
+                - name: hiddenOnly
+                  in: query
+                  description: |-
+                    Optional. If true, only the caller's own memos whose hide_until is still
+                     in the future are returned.
+                  schema:
+                    type: boolean
             responses:
                 "200":
                     description: OK

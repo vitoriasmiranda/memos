@@ -47,3 +47,34 @@ func TestMemoListExcludesFutureHidden(t *testing.T) {
 	require.NotNil(t, got, "direct reads must still find a future-hidden memo")
 	require.Equal(t, future.UID, got.UID)
 }
+
+func TestMemoListOnlyFutureHidden(t *testing.T) {
+	t.Parallel()
+	ctx := context.Background()
+	ts := NewTestingStore(ctx, t)
+	defer ts.Close()
+
+	user, err := createTestingHostUser(ctx, ts)
+	require.NoError(t, err)
+
+	create := func(uid string, hideUntil *timestamppb.Timestamp) *store.Memo {
+		memo, err := ts.CreateMemo(ctx, &store.Memo{
+			UID:        uid,
+			CreatorID:  user.ID,
+			Content:    uid,
+			Visibility: store.Private,
+			Payload:    &storepb.MemoPayload{HideUntil: hideUntil},
+		})
+		require.NoError(t, err)
+		return memo
+	}
+
+	create("visible", nil)
+	create("past", timestamppb.New(time.Now().Add(-time.Hour)))
+	future := create("future", timestamppb.New(time.Now().Add(time.Hour)))
+
+	listed, err := ts.ListMemos(ctx, &store.FindMemo{OnlyFutureHidden: true})
+	require.NoError(t, err)
+	require.Len(t, listed, 1)
+	require.Equal(t, future.UID, listed[0].UID)
+}

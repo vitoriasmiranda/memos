@@ -362,6 +362,10 @@ message ListMemosRequest {
   // Optional. If true, show deleted memos in the response.
   bool show_deleted = 6 [(google.api.field_behavior) = OPTIONAL];
 
+  // Optional. If true, only the caller's own memos whose hide_until is still
+  // in the future are returned.
+  bool hidden_only = 9 [(google.api.field_behavior) = OPTIONAL];
+
   reserved 7, 8;
   reserved "space", "unassigned";
 }

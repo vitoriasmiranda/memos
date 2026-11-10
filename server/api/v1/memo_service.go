@@ -95,6 +95,15 @@ func (s *APIV1Service) ListMemos(ctx context.Context, request *v1pb.ListMemosReq
 	}
 	memoFind.Access = accessScope
 
+	if request.HiddenOnly {
+		if currentUser == nil {
+			return &v1pb.ListMemosResponse{}, nil
+		}
+		memoFind.ExcludeFutureHidden = false
+		memoFind.OnlyFutureHidden = true
+		memoFind.CreatorID = &currentUser.ID
+	}
+
 	if request.State == v1pb.State_ARCHIVED {
 		state := store.Archived
 		memoFind.RowStatus = &state
