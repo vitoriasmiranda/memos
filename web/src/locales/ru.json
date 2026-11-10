@@ -322,7 +322,11 @@
     "go-to": "Перейти к {{source}}",
     "on-this-memo": "К этой заметке",
     "parent-memo": "Родительская заметка",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "Перемещено в архив",

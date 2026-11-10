@@ -563,27 +563,27 @@ type ListMemosRequest struct {
 	OrderBy string `protobuf:"bytes,4,opt,name=order_by,json=orderBy,proto3" json:"order_by,omitempty"`
 	// Optional. A CEL expression to filter memos. Combine terms with && and ||.
 	// Available fields:
-	//
-	//	content (string), creator (string, e.g. "users/1"),
-	//	created_ts / updated_ts (timestamp), pinned (bool),
-	//	visibility (string: PRIVATE | PROTECTED | PUBLIC | SPACE),
-	//	space (string resource name, or null when the memo has no space;
-	//	  supports == and comparisons against null, e.g. space != null),
-	//	tags (list<string>; match with `"work" in tags`, not `tag == "work"`),
-	//	has_task_list / has_link / has_code / has_incomplete_tasks (bool),
-	//	has_location (bool; true when the memo has a location attached).
-	//
+	//   content (string), creator (string, e.g. "users/1"),
+	//   created_ts / updated_ts (timestamp), pinned (bool),
+	//   visibility (string: PRIVATE | PROTECTED | PUBLIC | SPACE),
+	//   space (string resource name, or null when the memo has no space;
+	//     supports == and comparisons against null, e.g. space != null),
+	//   tags (list<string>; match with `"work" in tags`, not `tag == "work"`),
+	//   has_task_list / has_link / has_code / has_incomplete_tasks (bool),
+	//   has_location (bool; true when the memo has a location attached).
 	// Note: the time fields here are created_ts / updated_ts, which differ from
 	// the create_time / update_time names used by order_by.
 	// Examples:
-	//
-	//	pinned == true && visibility == "PUBLIC"
-	//	space == "spaces/team" or space == null
-	//	tags.exists(t, t == "urgent")
-	//	content.contains("roadmap") && created_ts > now - duration("168h")
+	//   pinned == true && visibility == "PUBLIC"
+	//   space == "spaces/team" or space == null
+	//   tags.exists(t, t == "urgent")
+	//   content.contains("roadmap") && created_ts > now - duration("168h")
 	Filter string `protobuf:"bytes,5,opt,name=filter,proto3" json:"filter,omitempty"`
 	// Optional. If true, show deleted memos in the response.
-	ShowDeleted   bool `protobuf:"varint,6,opt,name=show_deleted,json=showDeleted,proto3" json:"show_deleted,omitempty"`
+	ShowDeleted bool `protobuf:"varint,6,opt,name=show_deleted,json=showDeleted,proto3" json:"show_deleted,omitempty"`
+	// Optional. If true, only the caller's own memos whose hide_until is still
+	// in the future are returned.
+	HiddenOnly    bool `protobuf:"varint,9,opt,name=hidden_only,json=hiddenOnly,proto3" json:"hidden_only,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -656,6 +656,13 @@ func (x *ListMemosRequest) GetFilter() string {
 func (x *ListMemosRequest) GetShowDeleted() bool {
 	if x != nil {
 		return x.ShowDeleted
+	}
+	return false
+}
+
+func (x *ListMemosRequest) GetHiddenOnly() bool {
+	if x != nil {
+		return x.HiddenOnly
 	}
 	return false
 }
@@ -2392,7 +2399,7 @@ const file_api_v1_memo_service_proto_rawDesc = "" +
 	"\tlongitude\x18\x03 \x01(\x01B\x03\xe0A\x01R\tlongitude\"^\n" +
 	"\x11CreateMemoRequest\x12+\n" +
 	"\x04memo\x18\x01 \x01(\v2\x12.memos.api.v1.MemoB\x03\xe0A\x02R\x04memo\x12\x1c\n" +
-	"\amemo_id\x18\x02 \x01(\tB\x03\xe0A\x01R\x06memoId\"\x8c\x02\n" +
+	"\amemo_id\x18\x02 \x01(\tB\x03\xe0A\x01R\x06memoId\"\xb2\x02\n" +
 	"\x10ListMemosRequest\x12 \n" +
 	"\tpage_size\x18\x01 \x01(\x05B\x03\xe0A\x01R\bpageSize\x12\"\n" +
 	"\n" +
@@ -2400,7 +2407,9 @@ const file_api_v1_memo_service_proto_rawDesc = "" +
 	"\x05state\x18\x03 \x01(\x0e2\x13.memos.api.v1.StateB\x03\xe0A\x01R\x05state\x12\x1e\n" +
 	"\border_by\x18\x04 \x01(\tB\x03\xe0A\x01R\aorderBy\x12\x1b\n" +
 	"\x06filter\x18\x05 \x01(\tB\x03\xe0A\x01R\x06filter\x12&\n" +
-	"\fshow_deleted\x18\x06 \x01(\bB\x03\xe0A\x01R\vshowDeletedJ\x04\b\a\x10\bJ\x04\b\b\x10\tR\x05spaceR\n" +
+	"\fshow_deleted\x18\x06 \x01(\bB\x03\xe0A\x01R\vshowDeleted\x12$\n" +
+	"\vhidden_only\x18\t \x01(\bB\x03\xe0A\x01R\n" +
+	"hiddenOnlyJ\x04\b\a\x10\bJ\x04\b\b\x10\tR\x05spaceR\n" +
 	"unassigned\"e\n" +
 	"\x11ListMemosResponse\x12(\n" +
 	"\x05memos\x18\x01 \x03(\v2\x12.memos.api.v1.MemoR\x05memos\x12&\n" +

@@ -317,7 +317,11 @@
       "updated": "تم تحديث المهام"
     },
     "view-options": "خيارات العرض",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "تمت الأرشفة بنجاح",

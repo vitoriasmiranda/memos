@@ -400,7 +400,11 @@
     "go-to": "轉到 {{source}}",
     "on-this-memo": "在此備忘錄中",
     "parent-memo": "原始備忘錄",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "封存成功",

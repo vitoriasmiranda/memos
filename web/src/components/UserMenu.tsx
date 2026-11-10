@@ -1,4 +1,5 @@
 import {
+  AlarmClockIcon,
   ArchiveIcon,
   BellIcon,
   CheckIcon,
@@ -57,6 +58,7 @@ const UserMenu = (props: Props) => {
   const currentTheme = getThemeWithFallback(userGeneralSetting?.theme);
   const inboxActive = Boolean(matchPath(Routes.INBOX, location.pathname));
   const archivedActive = Boolean(matchPath(Routes.ARCHIVED, location.pathname));
+  const postponedActive = Boolean(matchPath(Routes.POSTPONED, location.pathname));
   const unreadCount = notifications.filter((notification) => notification.status === UserNotification_Status.UNREAD).length;
   const userLabel = currentUser?.displayName || currentUser?.username || t("common.profile");
   const triggerLabel = `${userLabel}, ${t("common.more")}${unreadCount > 0 ? `, ${unreadCount} ${t("inbox.unread")}` : ""}`;
@@ -202,6 +204,14 @@ const UserMenu = (props: Props) => {
         >
           <ArchiveIcon className="size-4 text-muted-foreground" />
           {t("common.archived")}
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          aria-current={postponedActive ? "page" : undefined}
+          className={cn(postponedActive && "bg-accent text-accent-foreground")}
+          onClick={() => navigateFromMenu(Routes.POSTPONED)}
+        >
+          <AlarmClockIcon className="size-4 text-muted-foreground" />
+          {t("memo.postponed.title")}
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuSub>

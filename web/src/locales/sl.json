@@ -322,7 +322,11 @@
     "on-this-memo": "V tem zapisku",
     "parent-memo": "Nadrejeni zapisek",
     "view-options": "Možnosti pogleda",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "Uspešno arhivirano",

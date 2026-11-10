@@ -7,6 +7,7 @@ export const ROUTES = {
   ATTACHMENTS: "/attachments",
   INBOX: "/inbox",
   ARCHIVED: "/archived",
+  POSTPONED: "/postponed",
   CALENDAR: "/calendar",
   MAP: "/map",
   VIEWS: "/views",

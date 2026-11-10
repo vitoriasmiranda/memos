@@ -360,7 +360,11 @@
     "on-this-memo": "В тази бележка",
     "parent-memo": "Родителска бележка",
     "view-options": "Опции за преглед",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "Архивиран успешно",

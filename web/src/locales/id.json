@@ -317,7 +317,11 @@
       "updated": "Tugas diperbarui"
     },
     "view-options": "Opsi tampilan",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "Berhasil diarsipkan",

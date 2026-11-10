@@ -317,7 +317,11 @@
       "updated": "작업 업데이트됨"
     },
     "view-options": "보기 옵션",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "성공적으로 보관되었습니다",

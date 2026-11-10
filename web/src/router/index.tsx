@@ -17,6 +17,7 @@ import { SpaceRoute } from "./SpaceRoute";
 const AdminSignIn = lazyWithReload(() => import("@/pages/AdminSignIn"));
 const About = lazyWithReload(() => import("@/pages/About"));
 const Archived = lazyWithReload(() => import("@/pages/Archived"));
+const Postponed = lazyWithReload(() => import("@/pages/Postponed"));
 const AuthCallback = lazyWithReload(() => import("@/pages/AuthCallback"));
 const MemoMap = lazyWithReload(() => import("@/pages/Map"));
 const Calendar = lazyWithReload(() => import("@/pages/Calendar"));
@@ -92,6 +93,7 @@ export const routeConfig: RouteObject[] = [
                 element: <RequireAuthRoute />,
                 children: [
                   { path: Routes.ARCHIVED, element: <Archived /> },
+                  { path: Routes.POSTPONED, element: <Postponed /> },
                   { path: CALENDAR_ROUTE_PATTERN, element: <Calendar /> },
                   {
                     element: <RequireFullInitializationRoute />,

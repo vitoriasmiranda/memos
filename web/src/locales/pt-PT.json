@@ -322,7 +322,11 @@
     "on-this-memo": "Neste memorando",
     "parent-memo": "Memorando pai",
     "view-options": "Opções de visualização",
-    "hidden-until": "Adiado até {{date}}"
+    "hidden-until": "Adiado até {{date}}",
+    "postponed": {
+      "title": "Adiados",
+      "empty": "Nenhum memo adiado."
+    }
   },
   "message": {
     "archived-successfully": "Arquivado com sucesso",
