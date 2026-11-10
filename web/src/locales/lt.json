@@ -360,7 +360,11 @@
     "on-this-memo": "Šiame priminime",
     "parent-memo": "Pagrindinis priminimas",
     "view-options": "Peržiūros parinktys",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "Sėkmingai suarchyvuota",

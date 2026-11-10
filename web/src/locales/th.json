@@ -317,7 +317,11 @@
       "updated": "อัปเดตงานแล้ว"
     },
     "view-options": "ตัวเลือกการดู",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "เก็บถาวรเรียบร้อยแล้ว",

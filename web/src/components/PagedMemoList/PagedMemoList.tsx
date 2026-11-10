@@ -44,6 +44,7 @@ interface Props {
   orderBy?: string;
   filter?: string;
   contextFilter?: string;
+  hiddenOnly?: boolean;
   pageSize?: number;
   showCreator?: boolean;
   enabled?: boolean;
@@ -158,6 +159,7 @@ const PagedMemoList = (props: Props) => {
         orderBy: props.orderBy || "create_time desc",
         filter: combineCELFilters(props.contextFilter, props.filter),
         pageSize: props.pageSize || DEFAULT_LIST_MEMOS_PAGE_SIZE,
+        ...(props.hiddenOnly ? { hiddenOnly: true } : {}),
       },
       { enabled: props.enabled ?? true },
     );

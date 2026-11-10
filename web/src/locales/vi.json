@@ -317,7 +317,11 @@
       "updated": "Nhiệm vụ đã được cập nhật"
     },
     "view-options": "Tùy chọn xem",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "Lưu trữ thành công",

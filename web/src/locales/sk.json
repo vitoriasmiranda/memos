@@ -360,7 +360,11 @@
     "on-this-memo": "V tejto poznámke",
     "parent-memo": "Nadradená poznámka",
     "view-options": "Možnosti zobrazenia",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "Úspešne archivované",

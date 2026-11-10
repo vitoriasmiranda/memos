@@ -360,7 +360,11 @@
     "on-this-memo": "На овој поруци",
     "parent-memo": "Надређена порука",
     "view-options": "Опције приказа",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "Архивирано је успешно",

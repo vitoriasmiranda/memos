@@ -322,7 +322,11 @@
     "on-this-memo": "På detta PM",
     "parent-memo": "Överordnat PM",
     "view-options": "Visningsalternativ",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "Arkiverad framgångsrikt",

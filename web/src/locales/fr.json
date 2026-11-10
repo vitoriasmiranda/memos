@@ -322,7 +322,11 @@
     "on-this-memo": "Sur ce mémo",
     "parent-memo": "Mémo parent",
     "view-options": "Options d'affichage",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "Archivé avec succès",

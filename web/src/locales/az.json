@@ -418,7 +418,11 @@
       "space": "Sahə",
       "space-description": "Bu sahənin üzvlərinə görünür"
     },
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "Uğurla arxivləndi",

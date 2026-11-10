@@ -322,7 +322,11 @@
     "go-to": "{{source}}へ移動",
     "on-this-memo": "このメモについて",
     "parent-memo": "親メモ",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "アーカイブが完了しました",

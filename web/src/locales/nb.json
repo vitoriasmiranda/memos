@@ -322,7 +322,11 @@
     "on-this-memo": "På dette notatet",
     "parent-memo": "Overordnet notat",
     "view-options": "Visningsalternativer",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "Arkivering vellykket",

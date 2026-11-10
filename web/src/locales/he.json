@@ -393,7 +393,11 @@
     "go-to": "עבור אל {{source}}",
     "on-this-memo": "על תזכיר זה",
     "parent-memo": "תזכיר אב",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "הועבר לארכיון בהצלחה",

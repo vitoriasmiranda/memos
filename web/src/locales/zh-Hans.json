@@ -347,7 +347,11 @@
       "space-audience": "{{space}} 的成员将可以阅读此备忘录。",
       "history": "现有表态会保留在此备忘录上。评论和关联的备忘录仍遵循各自的访问规则。"
     },
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "归档成功",

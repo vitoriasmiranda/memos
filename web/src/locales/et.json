@@ -360,7 +360,11 @@
     "on-this-memo": "Sellel memo peal",
     "parent-memo": "Ülemmemo",
     "view-options": "Vaate valikud",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "Arhiveerimine õnnestus",

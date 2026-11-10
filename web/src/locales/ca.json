@@ -322,7 +322,11 @@
     "on-this-memo": "En aquesta nota",
     "parent-memo": "Nota principal",
     "view-options": "Opcions de visualització",
-    "hidden-until": "Hidden until {{date}}"
+    "hidden-until": "Hidden until {{date}}",
+    "postponed": {
+      "title": "Postponed",
+      "empty": "No postponed memos."
+    }
   },
   "message": {
     "archived-successfully": "Arxivat correctament",
